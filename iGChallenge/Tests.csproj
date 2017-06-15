@@ -68,6 +68,7 @@
       <DependentUpon>Successful_LogIn_Feature.feature</DependentUpon>
     </Compile>
     <Compile Include="SeleniumTests\Steps\Login\Successful_LogIn_FeatureSteps.cs" />
+    <Compile Include="WebpageLocators\LoginPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="RestTests\" />

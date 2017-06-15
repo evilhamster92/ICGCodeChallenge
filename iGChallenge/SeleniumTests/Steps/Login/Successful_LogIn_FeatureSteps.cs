@@ -6,14 +6,13 @@ using TechTalk.SpecFlow;
 using SeleniumTestLibrary.BaseFramework.BaseLayer;
 using SeleniumTestLibrary.BaseFramework;
 using SeleniumTestLibrary.StaticElementLayer;
+using iGChallenge.WebpageLocators;
 
 namespace iGChallenge
 {
     [Binding]
     public class Successful_LogIn_FeatureSteps : SeleniumTest
     {
-        //public IWebDriver driver;
-        TimeSpan t = new TimeSpan(0, 0, 0, 30);
 
         [Given(@"User is at the Home Page")]
         public void GivenUserIsAtTheHomePage()
@@ -24,55 +23,27 @@ namespace iGChallenge
         [Given(@"Navigate to LogIn Page")]
         public void GivenNavigateToLogInPage()
         {
-
-            Button.Click("/html/body/header/div[2]/a[1]");
-            /*
-            if (driver.FindElement(By.XPath("/html/body/header/div[2]/a[1]")).Displayed)
-            {
-                driver.FindElement(By.XPath("/html/body/header/div[2]/a[1]")).Click();
-            }
-            else
-            {
-                driver.FindElement(By.XPath("//*[@class='login'")).Click();
-            }
-            */
+            Button.Click(LoginPage.HomePageSignIn_Button);
         }
 
         [When(@"User enter UserName and Password")]
         public void WhenUserEnterUserNameAndPassword()
         {
-            Editbox.SendText("//input[@id='username']", "adrian.bartos92@gmail.com");
-            Button.Click("//input[@id='loginButton']");
-            Editbox.SendText("//input[@id='password']", "dummypassword2.");
-
-            /*
-            driver.FindElement(By.XPath("//input[@id='username']")).SendKeys("adrian.bartos92@gmail.com");
-            driver.FindElement(By.XPath("//input[@id='loginButton']")).Click();
-            WebDriverWait wait = new WebDriverWait(driver, t);
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[@id='password']")));
-
-            driver.FindElement(By.XPath("//input[@id='password']")).SendKeys("dummypassword2.");
-            */
+            Editbox.SendText(LoginPage.Email_EditBox, "adrian.bartos92@gmail.com");
+            Button.Click(LoginPage.Login_Button);
+            Editbox.SendText(LoginPage.Password_Editbox, "dummypassword2.");
         }
 
         [When(@"Click on the LogIn button")]
         public void WhenClickOnTheLogInButton()
         {
-            //driver.FindElement(By.XPath("//input[@id='loginButton']")).Click();
-            Button.Click("//input[@id='loginButton']");
+            Button.Click(LoginPage.Login_Button);
         }
 
         [Then(@"Successful LogIN message should display")]
         public void ThenSuccessfulLogINMessageShouldDisplay()
         {
-            //driver.Manage().Timeouts().ImplicitlyWait(System.TimeSpan.FromMilliseconds(5000));
-            //WebDriverWait wait = new WebDriverWait(driver, t);
-
             Button.Click("//*[@id=\"gwt-debug-AccountMenuView-root\"]");
-
-            //wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("#gwt-debug-AccountMenu-avatar > div > div.GOKB433CGG > div > img")));
-            //driver.FindElement(By.CssSelector("#gwt-debug-AccountMenu-avatar > div > div.GOKB433CGG > div > img")).Click();
-
             BrowserManager.QuitBrowser();
 
         }
