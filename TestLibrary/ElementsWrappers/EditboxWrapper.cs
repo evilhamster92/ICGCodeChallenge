@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SeleniumTestLibrary.ElementsWrappers
 {
-    public class AbstractEditbox : BaseElement
+    public class EditboxWrapper : BaseElement
     {
 
         /// <summary>

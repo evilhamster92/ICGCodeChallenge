@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SeleniumTestLibrary.StaticElementLayer
 {
-    public class Editbox : AbstractEditbox
+    public class Editbox : EditboxWrapper
     {
         /// <summary>
         /// Sends text to a IWebElement
@@ -17,9 +17,9 @@ namespace SeleniumTestLibrary.StaticElementLayer
         /// <param name="Text">Text to be send to the element</param>
         public static void SendText(string ElementLocator, string Text)
         {
-            AbstractEditbox control = new AbstractEditbox();
+            EditboxWrapper control = new EditboxWrapper();
             control.SendText(ElementLocator, Text);
         }
     }
 }
-}
+
