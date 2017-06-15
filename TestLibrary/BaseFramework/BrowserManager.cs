@@ -6,18 +6,63 @@ using System.Collections.Generic;
 using OpenQA.Selenium.Support.UI;
 using NUnit.Framework;
 
-namespace Automation.BaseFramework.BaseLayer
+namespace SeleniumTestLibrary.BaseFramework.BaseLayer
 {
     public class BrowserManager
     {
-        private static IWebDriver browser;
+        private static IWebDriver browser = GetDriverInstance();
 
-        public BrowserManager()
+
+        /// <summary>
+        /// For the moment only chrome will be supported. 
+        /// </summary>
+        /// <param name="browser"></param>
+        /// <returns></returns>
+        private static IWebDriver CreateWebdriverInstance(string BrowserName)
         {
-            //implicit constructor;
-            browser.Manage().Window.Maximize();
+            if (BrowserName.Contains("chrome"))
+            {
+                browser = new ChromeDriver();
+                Console.WriteLine("Started chrome instance.");
+                return browser;
+            }
 
+             else (BrowserName.Contains("firefox") || BrowserName.Contains("Firefox"))
+            {
+                Console.WriteLine("Started firefoxdriver instance.");
+                browser = new FirefoxDriver();
+                return browser;
+             }
         }
+
+
+        /// <summary>
+        /// Returns the instance of the webdriver. Only chrome supported for the demo
+        /// </summary>
+        /// <param name="BrowserName"></param>
+        /// <returns></returns>
+        public static IWebDriver GetDriverInstance()
+        {
+            if (browser == null)
+            {
+                CreateWebdriverInstance("chrome");
+            }
+            if (browser != null)
+            {
+                // maximize the window, before any action is to be done on it.
+                browser.Manage().Window.Maximize();
+                return browser;
+            }
+            else
+            {
+                //throw new exception as something is wrong with the current instance
+            }
+
+            return browser;
+        }
+//________________
+
+
 
         public static void WaitForElementToBeDisplayed(string Element, int Timeout)
         {
@@ -51,20 +96,7 @@ namespace Automation.BaseFramework.BaseLayer
             }
         }
 
-        public BrowserManager(string driver, string startingPage)
-        {
-            if (driver.Contains("chrome"))
-            {
-                browser = new ChromeDriver();
-                Console.WriteLine("Started chromedriver instance.");
-            }
 
-            if (driver.Contains("firefox") || driver.Contains("Firefox"))
-            {
-                Console.WriteLine("Started firefoxdriver instance.");
-                browser = new FirefoxDriver();
-            }
-        }
 
         public static void Navigate(string pageToNavigate)
         {

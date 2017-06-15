@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseFramework\BrowserManager.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="BaseFramework\SeleniumTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

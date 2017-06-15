@@ -3,20 +3,21 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using TechTalk.SpecFlow;
-using Automation.BaseFramework.BaseLayer;
+using SeleniumTestLibrary.BaseFramework.BaseLayer;
+using SeleniumTestLibrary.BaseFramework;
 
 namespace iGChallenge
 {
     [Binding]
-    public class Successful_LogIn_FeatureSteps
+    public class Successful_LogIn_FeatureSteps : SeleniumTest
     {
-        public IWebDriver driver;
+        //public IWebDriver driver;
         TimeSpan t = new TimeSpan(0, 0, 0, 30);
 
         [Given(@"User is at the Home Page")]
         public void GivenUserIsAtTheHomePage()
         {
-            BrowserManager.Navigate("https://evernote.com/");
+            browser.Navigate()
         }
 
         [Given(@"Navigate to LogIn Page")]
