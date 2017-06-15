@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "iGChallenge\Tests.csproj", "{6EA6D0EE-9B32-43E7-A08F-2B96F3C806E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLibrary", "TestLibrary\TestLibrary.csproj", "{D102D150-9B43-40CC-9A85-A392221AEC37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTestLibrary", "TestLibrary\SeleniumTestLibrary.csproj", "{D102D150-9B43-40CC-9A85-A392221AEC37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
