@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using TechTalk.SpecFlow;
+using Automation.BaseFramework.BaseLayer;
 
 namespace iGChallenge
 {
@@ -15,10 +16,7 @@ namespace iGChallenge
         [Given(@"User is at the Home Page")]
         public void GivenUserIsAtTheHomePage()
         {
-            //System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", @"/path/to/geckodriver.exe"
-            driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Url = "https://evernote.com/";
+            BrowserManager.Navigate("https://evernote.com/");
         }
 
         [Given(@"Navigate to LogIn Page")]
