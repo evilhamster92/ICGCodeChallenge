@@ -10,8 +10,14 @@ namespace SeleniumTestLibrary.BaseFramework.BaseLayer
 {
     public class BrowserManager
     {
-        private static IWebDriver browser = GetDriverInstance();
+        //private static BrowserManager browser = new BrowserManager();
+        private static IWebDriver browser;
 
+
+        public BrowserManager()
+        {
+            GetDriverInstance();
+        }
 
         /// <summary>
         /// For the moment only chrome will be supported. 
@@ -27,12 +33,7 @@ namespace SeleniumTestLibrary.BaseFramework.BaseLayer
                 return browser;
             }
 
-             else (BrowserName.Contains("firefox") || BrowserName.Contains("Firefox"))
-            {
-                Console.WriteLine("Started firefoxdriver instance.");
-                browser = new FirefoxDriver();
-                return browser;
-             }
+            return browser;
         }
 
 
@@ -61,8 +62,6 @@ namespace SeleniumTestLibrary.BaseFramework.BaseLayer
 
             return browser;
         }
-        //________________
-
 
         public static void Refresh()
         {
@@ -95,7 +94,7 @@ namespace SeleniumTestLibrary.BaseFramework.BaseLayer
 
         }
 
-      
+
 
         public static void QuitBrowser()
         {

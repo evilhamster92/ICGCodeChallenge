@@ -60,7 +60,9 @@
     <Compile Include="BaseFramework\BaseElement.cs" />
     <Compile Include="BaseFramework\BrowserManager.cs" />
     <Compile Include="BaseFramework\SeleniumTest.cs" />
+    <Compile Include="ElementsWrappers\AbstractEditbox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticElementLayer\Editbox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

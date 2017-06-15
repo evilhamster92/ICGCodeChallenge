@@ -5,6 +5,7 @@ using System;
 using TechTalk.SpecFlow;
 using SeleniumTestLibrary.BaseFramework.BaseLayer;
 using SeleniumTestLibrary.BaseFramework;
+using SeleniumTestLibrary.StaticElementLayer;
 
 namespace iGChallenge
 {
@@ -17,12 +18,13 @@ namespace iGChallenge
         [Given(@"User is at the Home Page")]
         public void GivenUserIsAtTheHomePage()
         {
-            driver.Navigate()
+            BrowserManager.Navigate("https://evernote.com/");
         }
 
         [Given(@"Navigate to LogIn Page")]
         public void GivenNavigateToLogInPage()
         {
+            /*
             if (driver.FindElement(By.XPath("/html/body/header/div[2]/a[1]")).Displayed)
             {
                 driver.FindElement(By.XPath("/html/body/header/div[2]/a[1]")).Click();
@@ -31,13 +33,15 @@ namespace iGChallenge
             {
                 driver.FindElement(By.XPath("//*[@class='login'")).Click();
             }
+            */
         }
 
         [When(@"User enter UserName and Password")]
         public void WhenUserEnterUserNameAndPassword()
         {
-            driver.FindElement(By.XPath("//input[@id='username']")).SendKeys("adrian.bartos92@gmail.com");
-            driver.FindElement(By.XPath("//input[@id='loginButton']")).Click();
+            Editbox.SendText("//input[@id='username']", ""adrian.bartos92@gmail.com"")
+            //driver.FindElement(By.XPath("//input[@id='username']")).SendKeys("adrian.bartos92@gmail.com");
+            //driver.FindElement(By.XPath("//input[@id='loginButton']")).Click();
 
 
 

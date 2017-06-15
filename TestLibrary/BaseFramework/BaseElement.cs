@@ -12,15 +12,17 @@ namespace SeleniumTestLibrary.BaseFramework
 {
     public abstract class BaseElement 
     {
+        public const int DEFAULT_WAIT_TIME = 10;
         public static IWebDriver browser = BrowserManager.GetDriverInstance();
+        static TimeSpan timeout = new TimeSpan(0, 0, 0, DEFAULT_WAIT_TIME);
 
         public static void WaitForElementToBeDisplayed(string Element, int Timeout)
         {
             try
             {
                 Console.WriteLine("Waiting " + Timeout.ToString() + " for the " + Element + "to become displayed");
-                TimeSpan t = new TimeSpan(0, 0, 0, Timeout);
-                WebDriverWait wait = new WebDriverWait(browser, t);
+                
+                WebDriverWait wait = new WebDriverWait(browser, timeout);
                 wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(Element)));
 
                 Console.WriteLine("Element " + Element + " became visible.");
@@ -63,6 +65,8 @@ namespace SeleniumTestLibrary.BaseFramework
             IWebElement element;
             try
             {
+                WebDriverWait wait = new WebDriverWait(browser, timeout);
+                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(ElementLocator)));
                 element = browser.FindElement(By.XPath(ElementLocator));
                 Console.WriteLine("Successfully found the element" + ElementLocator);
             }
