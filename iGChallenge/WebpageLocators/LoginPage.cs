@@ -14,6 +14,7 @@ namespace iGChallenge.WebpageLocators
         public static string Email_EditBox = "//input[@id='username']";
         public static string Login_Button = "//input[@id='loginButton']";
         public static string Password_Editbox = "//input[@id='password']";
+        public static string LoginError_Label = "//div[@id='responseMessage']";
 
     }
 }

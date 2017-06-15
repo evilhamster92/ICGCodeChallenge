@@ -62,11 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeleniumTests\Features\Login\Failed_Login_Without_Credentials_Feature.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Failed_Login_Without_Credentials_Feature.feature</DependentUpon>
+    </Compile>
     <Compile Include="SeleniumTests\Features\Login\Successful_LogIn_Feature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Successful_LogIn_Feature.feature</DependentUpon>
     </Compile>
+    <Compile Include="SeleniumTests\Steps\Login\Failed_Login_Without_Credentials_FeatureSteps.cs" />
     <Compile Include="SeleniumTests\Steps\Login\Successful_LogIn_FeatureSteps.cs" />
     <Compile Include="WebpageLocators\LoginPage.cs" />
   </ItemGroup>
@@ -80,6 +86,10 @@
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
+    <None Include="SeleniumTests\Features\Login\Failed_Login_Without_Credentials_Feature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Failed_Login_Without_Credentials_Feature.feature.cs</LastGenOutput>
+    </None>
     <None Include="SeleniumTests\Features\Login\Successful_LogIn_Feature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Successful_LogIn_Feature.feature.cs</LastGenOutput>
