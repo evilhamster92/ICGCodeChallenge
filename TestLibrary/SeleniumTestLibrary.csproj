@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseFramework\BaseElement.cs" />
     <Compile Include="BaseFramework\BrowserManager.cs" />
     <Compile Include="BaseFramework\SeleniumTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

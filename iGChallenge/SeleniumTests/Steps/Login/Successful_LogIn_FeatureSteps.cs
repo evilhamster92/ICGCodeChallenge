@@ -17,7 +17,7 @@ namespace iGChallenge
         [Given(@"User is at the Home Page")]
         public void GivenUserIsAtTheHomePage()
         {
-            browser.Navigate()
+            driver.Navigate()
         }
 
         [Given(@"Navigate to LogIn Page")]
