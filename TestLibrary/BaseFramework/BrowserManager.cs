@@ -83,6 +83,7 @@ namespace SeleniumTestLibrary.BaseFramework.BaseLayer
         {
             try
             {
+                browser.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 0, 5));
                 browser.Navigate().GoToUrl(pageToNavigate);
                 Console.WriteLine("Navigated to: ." + pageToNavigate);
             }

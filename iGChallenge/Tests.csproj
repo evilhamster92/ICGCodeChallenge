@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SeleniumTests\Steps\Notes\NoteIsSavedWhenLoggingOutSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleniumTests\Features\Login\Failed_Login_Without_Credentials_Feature.feature.cs">
       <AutoGen>True</AutoGen>
@@ -72,9 +73,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Successful_LogIn_Feature.feature</DependentUpon>
     </Compile>
+    <Compile Include="SeleniumTests\Features\Notes\NoteIsSavedWhenLoggingOut.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoteIsSavedWhenLoggingOut.feature</DependentUpon>
+    </Compile>
     <Compile Include="SeleniumTests\Steps\Login\Failed_Login_Without_Credentials_FeatureSteps.cs" />
     <Compile Include="SeleniumTests\Steps\Login\Successful_LogIn_FeatureSteps.cs" />
+    <Compile Include="UtilsFolder\LoginDetails.cs" />
+    <Compile Include="WebpageLocators\CreateNewNoteLocators.cs" />
     <Compile Include="WebpageLocators\LoginPage.cs" />
+    <Compile Include="WebpageLocators\NotesMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="RestTests\" />
@@ -93,6 +102,10 @@
     <None Include="SeleniumTests\Features\Login\Successful_LogIn_Feature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Successful_LogIn_Feature.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SeleniumTests\Features\Notes\NoteIsSavedWhenLoggingOut.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NoteIsSavedWhenLoggingOut.feature.cs</LastGenOutput>
     </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SeleniumTestLibrary.BaseFramework
 {
-    public abstract class BaseElement 
+    public abstract class BaseElement
     {
         public const int DEFAULT_WAIT_TIME = 10;
         public static IWebDriver browser = BrowserManager.GetDriverInstance();
@@ -21,7 +21,7 @@ namespace SeleniumTestLibrary.BaseFramework
             try
             {
                 Console.WriteLine("Waiting " + Timeout.ToString() + " for the " + Element + "to become displayed");
-                
+
                 WebDriverWait wait = new WebDriverWait(browser, timeout);
                 wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(Element)));
 
