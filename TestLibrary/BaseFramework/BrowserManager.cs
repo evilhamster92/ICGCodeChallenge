@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using OpenQA.Selenium.Support.UI;
 using NUnit.Framework;
+using System.Threading;
 
 namespace SeleniumTestLibrary.BaseFramework.BaseLayer
 {
@@ -105,14 +106,14 @@ namespace SeleniumTestLibrary.BaseFramework.BaseLayer
         public static void WaitForPageToLoad()
         {
             Console.WriteLine("Waiting for page to load.");
-            var wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
-            wait.Until(driver1 => ((IJavaScriptExecutor)browser).ExecuteScript("return document.readyState").Equals("complete"));
+            browser.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 0, 5));
         }
 
         public static void ImplicitWait(int seconds)
         {
             Console.WriteLine("Waiting " + seconds + " seconds.");
-            browser.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(seconds));
+            //browser.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(seconds));
+            Thread.Sleep(seconds * 1000);
         }
     }
 }

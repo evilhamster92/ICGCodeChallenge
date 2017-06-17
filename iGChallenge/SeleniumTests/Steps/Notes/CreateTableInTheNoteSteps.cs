@@ -48,7 +48,9 @@ namespace iGChallenge.SeleniumTests.Steps.Notes
                 Assert.Fail("Table created was not of the correct dimension.");
             }
 
-            BrowserManager.QuitBrowser();
+            NotesMenu.Logout();
+
+            //BrowserManager.QuitBrowser();
         }
     }
 }

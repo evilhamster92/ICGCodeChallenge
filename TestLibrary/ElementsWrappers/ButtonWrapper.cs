@@ -22,7 +22,7 @@ namespace SeleniumTestLibrary.ElementsWrappers
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception occured: " + e.ToString());
+                Console.WriteLine("Failed to click element " + ElementLocator);
                 Assert.Fail("Failed to click on the element: " + ElementLocator);
             }
         }

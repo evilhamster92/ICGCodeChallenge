@@ -41,6 +41,7 @@ namespace SeleniumTestLibrary.ElementsWrappers
 
             if (!elementText.Equals(ExpectedText))
             {
+                Console.WriteLine("Elements text are different." + ExpectedText + elementText);
                 Assert.Fail("Elements text are different." + ExpectedText + elementText);
             }
 

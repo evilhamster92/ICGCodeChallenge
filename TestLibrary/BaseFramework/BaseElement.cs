@@ -29,7 +29,7 @@ namespace SeleniumTestLibrary.BaseFramework
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("No element displayed in the time period for" + Element);
                 Assert.Fail("Element " + Element + "failed to become displayed.");
             }
         }
@@ -76,11 +76,33 @@ namespace SeleniumTestLibrary.BaseFramework
             catch (Exception e)
             {
                 element = null;
+                Console.WriteLine("No element found for" + ElementLocator);
                 Assert.Fail("Failed to find element " + ElementLocator);
-                Console.WriteLine("Exception reached" + e.Message);
+
             }
 
             return element;
+        }
+
+        public static bool isDisplayed(string ElementLocator)
+        {
+
+            bool result;
+            try
+            {
+                result = browser.FindElement(By.XPath(ElementLocator)).Displayed;
+                Console.WriteLine("Successfully found the element" + ElementLocator);
+            }
+            catch (Exception e)
+            {
+                result = false;
+                Console.WriteLine("Element is not displayed " + ElementLocator);
+                //Assert.Fail("Failed to find element " + ElementLocator);
+
+            }
+
+            return result;
+
         }
 
     }

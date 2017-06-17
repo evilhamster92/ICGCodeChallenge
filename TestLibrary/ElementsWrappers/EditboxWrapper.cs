@@ -28,7 +28,7 @@ namespace SeleniumTestLibrary.ElementsWrappers
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("Failed to send text to the element" + ElementLocator);
                 Assert.Fail("Failed to send text to the element" + ElementLocator);
 
             }

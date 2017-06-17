@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SeleniumTestLibrary.StaticElementLayer
 {
-    public class Button
+    public class Button : ButtonWrapper
     {
 
         /// <summary>

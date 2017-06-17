@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SeleniumTestLibrary.BaseFramework.BaseLayer;
+using SeleniumTestLibrary.StaticElementLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +16,16 @@ namespace iGChallenge.WebpageLocators
         public static string AccountIcon_button = "//div [@id='gwt-debug-AccountMenu-avatar']//img[1]";
         public static string Logout_Label = "//div[contains(text(), 'Log out')]";
         public static string CreatedNoteTitle_Label = "//div[@class='focus-NotesView-Note-noteTitle qa-title']";
+
+
+        #region BusinessLogic
+        public static void Logout ()
+        {
+            BrowserManager.WaitForPageToLoad();
+            Button.Click(NotesMenu.AccountIcon_button);
+            Button.Click(NotesMenu.Logout_Label);
+        }
+
+        #endregion
     }
 }

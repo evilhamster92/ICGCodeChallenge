@@ -5,6 +5,7 @@ using SeleniumTestLibrary.BaseFramework;
 using SeleniumTestLibrary.BaseFramework.BaseLayer;
 using SeleniumTestLibrary.StaticElementLayer;
 using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace iGChallenge
@@ -21,6 +22,7 @@ namespace iGChallenge
             Button.Click(LoginPage.Login_Button);
             Editbox.SendText(LoginPage.Password_Editbox, LoginDetails.Pass.Value);
             Button.Click(LoginPage.Login_Button);
+            BrowserManager.ImplicitWait(3);
         }
 
         [Given(@"User clicks on the create new note button")]
@@ -42,6 +44,7 @@ namespace iGChallenge
         public void WhenDoneButtonIsClicked()
         {
             Button.Click(CreateNewNote.Done_Button);
+            BrowserManager.ImplicitWait(2);
         }
 
         [When(@"User logs out and back in")]
@@ -61,9 +64,11 @@ namespace iGChallenge
         [Then(@"Note '(.*)' should be saved")]
         public void ThenNoteShouldBeSaved(string title)
         {
+            BrowserManager.ImplicitWait(3);
             Label.VerifyText(NotesMenu.CreatedNoteTitle_Label, title);
             Console.WriteLine("test finished.");
-            BrowserManager.QuitBrowser();
+            NotesMenu.Logout();
+            //BrowserManager.QuitBrowser();
         }
     }
 }
