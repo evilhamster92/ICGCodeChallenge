@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "iGChallenge\Tests.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTestLibrary", "TestLibrary\SeleniumTestLibrary.csproj", "{D102D150-9B43-40CC-9A85-A392221AEC37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestTestsLibrary", "RestTestsLibrary\RestTestsLibrary.csproj", "{0C738AFE-131D-45E2-AC01-FFF76B7002F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D102D150-9B43-40CC-9A85-A392221AEC37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D102D150-9B43-40CC-9A85-A392221AEC37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D102D150-9B43-40CC-9A85-A392221AEC37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C738AFE-131D-45E2-AC01-FFF76B7002F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C738AFE-131D-45E2-AC01-FFF76B7002F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C738AFE-131D-45E2-AC01-FFF76B7002F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C738AFE-131D-45E2-AC01-FFF76B7002F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
