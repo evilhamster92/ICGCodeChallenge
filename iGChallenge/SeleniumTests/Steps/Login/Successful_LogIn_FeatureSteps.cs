@@ -40,7 +40,7 @@ namespace iGChallenge
             Button.Click(LoginPage.Login_Button);
         }
 
-        [Then(@"Successful LogIN message should display")]
+        [Then(@"Notes page should display")]
         public void ThenSuccessfulLogINMessageShouldDisplay()
         {
             Button.Click("//*[@id=\"gwt-debug-AccountMenuView-root\"]");

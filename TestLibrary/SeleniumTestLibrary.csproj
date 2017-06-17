@@ -62,9 +62,11 @@
     <Compile Include="BaseFramework\SeleniumTest.cs" />
     <Compile Include="ElementsWrappers\EditboxWrapper.cs" />
     <Compile Include="ElementsWrappers\ButtonWrapper.cs" />
+    <Compile Include="ElementsWrappers\LabelWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticElementLayer\Button.cs" />
     <Compile Include="StaticElementLayer\Editbox.cs" />
+    <Compile Include="StaticElementLayer\Label.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

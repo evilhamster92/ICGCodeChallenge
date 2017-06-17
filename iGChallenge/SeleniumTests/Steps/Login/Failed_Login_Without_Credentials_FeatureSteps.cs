@@ -13,11 +13,11 @@ namespace iGChallenge.SeleniumTests.Steps.Login
         {
             Button.Click(LoginPage.Login_Button);
         }
-        
+
         [Then(@"Correct error message should display")]
         public void ThenCorrectErrorMessageShouldDisplay()
         {
-            Button.Click(LoginPage.LoginError_Label);
+            Label.VerifyText(LoginPage.LoginError_Label, LoginPage.LoginError_Text);
         }
     }
 }

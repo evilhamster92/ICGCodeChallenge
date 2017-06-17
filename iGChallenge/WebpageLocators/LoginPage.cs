@@ -8,6 +8,8 @@ namespace iGChallenge.WebpageLocators
 {
     public class LoginPage
     {
+
+        #region locators
         //HERE WE WILL STORE XPATHS FOR ALL ELEMENTS IN LOGIN THE PAGE
 
         public static string HomePageSignIn_Button = "//a[contains(text(), 'Sign In')]";
@@ -16,5 +18,13 @@ namespace iGChallenge.WebpageLocators
         public static string Password_Editbox = "//input[@id='password']";
         public static string LoginError_Label = "//div[@id='responseMessage']";
 
+        #endregion
+
+
+
+        #region UiStrings
+        public static string LoginError_Text = "Required data missing";
+
+        #endregion
     }
 }

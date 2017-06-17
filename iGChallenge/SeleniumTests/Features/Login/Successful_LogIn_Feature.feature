@@ -6,4 +6,4 @@ Scenario: Successful login with valid credentials
 	And Navigate to LogIn Page
 	When User enter UserName and Password
 	And Click on the LogIn button
-	Then Successful LogIN message should display
+	Then Notes page should display
