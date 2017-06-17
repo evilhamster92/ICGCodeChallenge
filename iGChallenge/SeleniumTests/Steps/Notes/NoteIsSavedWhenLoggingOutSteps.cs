@@ -35,15 +35,19 @@ namespace iGChallenge
             Editbox.SendText(NotesMenu.NoteTitle_Editbox, title);
             Editbox.SendText(NotesMenu.NoteTitle_Editbox, Keys.Tab);
             //Editbox.SendText(NotesMenu.NoteDescription_Editbox, description);
-            Button.Click(CreateNewNoteLocators.Done_Button);
 
-            Label.VerifyText(NotesMenu.CreatedNoteTitle_Label, title);
+        }
 
+        [When(@"Done button is clicked")]
+        public void WhenDoneButtonIsClicked()
+        {
+            Button.Click(CreateNewNote.Done_Button);
         }
 
         [When(@"User logs out and back in")]
         public void WhenUserLogsOutAndBackIn()
         {
+
             Button.Click(NotesMenu.AccountIcon_button);
             Button.Click(NotesMenu.Logout_Label);
 
@@ -59,7 +63,7 @@ namespace iGChallenge
         {
             Label.VerifyText(NotesMenu.CreatedNoteTitle_Label, title);
             Console.WriteLine("test finished.");
-            //BrowserManager.QuitBrowser();
+            BrowserManager.QuitBrowser();
         }
     }
 }

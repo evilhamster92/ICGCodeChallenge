@@ -91,8 +91,6 @@ namespace SeleniumTestLibrary.BaseFramework.BaseLayer
             {
                 Console.WriteLine(e.Message);
             }
-
-
         }
 
 
@@ -102,6 +100,19 @@ namespace SeleniumTestLibrary.BaseFramework.BaseLayer
             Console.WriteLine("Closed the driver instance.");
             //LoggerHelper.CloseLogger();
             browser.Quit();
+        }
+
+        public static void WaitForPageToLoad()
+        {
+            Console.WriteLine("Waiting for page to load.");
+            var wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
+            wait.Until(driver1 => ((IJavaScriptExecutor)browser).ExecuteScript("return document.readyState").Equals("complete"));
+        }
+
+        public static void ImplicitWait(int seconds)
+        {
+            Console.WriteLine("Waiting " + seconds + " seconds.");
+            browser.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(seconds));
         }
     }
 }

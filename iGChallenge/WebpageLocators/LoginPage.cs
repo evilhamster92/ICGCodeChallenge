@@ -24,7 +24,10 @@ namespace iGChallenge.WebpageLocators
 
         #region UiStrings
         public static string LoginError_Text = "Required data missing";
+        #endregion
 
+
+        #region BusinessMethods
         #endregion
     }
 }

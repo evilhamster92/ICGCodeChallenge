@@ -42,6 +42,9 @@ namespace SeleniumTestLibrary.BaseFramework
             {
                 try
                 {
+                    //WebDriverWait wait = new WebDriverWait(browser, timeout);
+                    //wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(ElementLocator)));
+
                     IReadOnlyCollection<IWebElement> rawList = browser.FindElements(By.XPath(ElementLocator));
                     list = new LinkedList<IWebElement>(rawList);
                     Console.WriteLine("Successfully found " + list.Count + " elements with the locator" + ElementLocator);

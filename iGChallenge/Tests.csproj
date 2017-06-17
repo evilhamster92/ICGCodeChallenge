@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SpecRun.SpecFlowPlugin, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecRun.SpecFlow.1.5.2\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
       <Private>True</Private>
@@ -61,6 +65,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SeleniumTests\Features\Notes\CreateTableInTheNote.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateTableInTheNote.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SeleniumTests\Steps\Notes\CreateTableInTheNoteSteps.cs" />
     <Compile Include="SeleniumTests\Steps\Notes\NoteIsSavedWhenLoggingOutSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleniumTests\Features\Login\Failed_Login_Without_Credentials_Feature.feature.cs">
@@ -81,7 +91,7 @@
     <Compile Include="SeleniumTests\Steps\Login\Failed_Login_Without_Credentials_FeatureSteps.cs" />
     <Compile Include="SeleniumTests\Steps\Login\Successful_LogIn_FeatureSteps.cs" />
     <Compile Include="UtilsFolder\LoginDetails.cs" />
-    <Compile Include="WebpageLocators\CreateNewNoteLocators.cs" />
+    <Compile Include="WebpageLocators\CreateNewNote.cs" />
     <Compile Include="WebpageLocators\LoginPage.cs" />
     <Compile Include="WebpageLocators\NotesMenu.cs" />
   </ItemGroup>
@@ -102,6 +112,10 @@
     <None Include="SeleniumTests\Features\Login\Successful_LogIn_Feature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Successful_LogIn_Feature.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SeleniumTests\Features\Notes\CreateTableInTheNote.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateTableInTheNote.feature.cs</LastGenOutput>
     </None>
     <None Include="SeleniumTests\Features\Notes\NoteIsSavedWhenLoggingOut.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

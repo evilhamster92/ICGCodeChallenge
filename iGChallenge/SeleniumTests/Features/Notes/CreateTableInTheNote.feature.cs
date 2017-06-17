@@ -17,20 +17,20 @@ namespace iGChallenge.SeleniumTests.Features.Notes
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("NoteIsSavedWhenLoggingOut", SourceFile="SeleniumTests\\Features\\Notes\\NoteIsSavedWhenLoggingOut.feature", SourceLine=0)]
-    public partial class NoteIsSavedWhenLoggingOutFeature
+    [TechTalk.SpecRun.FeatureAttribute("CreateTableInTheNote", SourceFile="SeleniumTests\\Features\\Notes\\CreateTableInTheNote.feature", SourceLine=0)]
+    public partial class CreateTableInTheNoteFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "NoteIsSavedWhenLoggingOut.feature"
+#line 1 "CreateTableInTheNote.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "NoteIsSavedWhenLoggingOut", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CreateTableInTheNote", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -61,7 +61,7 @@ namespace iGChallenge.SeleniumTests.Features.Notes
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void TheUserCanCreateANoteAndTheNoteIsSavedAfterTheUserIsLoggedOut(string title, string description, string[] exampleTags)
+        public virtual void TheUserCanCreateATableInsideNoteBody(string title, string description, string dimension, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "web"};
@@ -69,31 +69,30 @@ namespace iGChallenge.SeleniumTests.Features.Notes
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user can create a note and the note is saved after the user is logged out", @__tags);
-#line 5
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user can create a table inside note body", @__tags);
 #line 6
- testRunner.Given("The user logs into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.And("User clicks on the create new note button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("The user logs into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.When(string.Format("Note \'{0}\' and \'{1}\' is entered", title, description), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User clicks on the create new note button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.And("Done button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("Note \'{0}\' and \'{1}\' is entered", title, description), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.And("User logs out and back in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The add table button is pressed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then(string.Format("Note \'{0}\' should be saved", title), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Table is created inside the note body", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+ testRunner.And(string.Format("Table is of the correct \'{0}\'", dimension), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("The user can create a note and the note is saved after the user is logged out, te" +
-            "sttitle", new string[] {
-                "web"}, SourceLine=14)]
-        public virtual void TheUserCanCreateANoteAndTheNoteIsSavedAfterTheUserIsLoggedOut_Testtitle()
+        [TechTalk.SpecRun.ScenarioAttribute("The user can create a table inside note body, testtitle2", new string[] {
+                "web"}, SourceLine=16)]
+        public virtual void TheUserCanCreateATableInsideNoteBody_Testtitle2()
         {
-            this.TheUserCanCreateANoteAndTheNoteIsSavedAfterTheUserIsLoggedOut("testtitle", "testdescription", ((string[])(null)));
+            this.TheUserCanCreateATableInsideNoteBody("testtitle2", "testdescription", "3x3", ((string[])(null)));
 #line hidden
         }
         
